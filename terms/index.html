@@ -1,194 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Guardian Vouches – Terms of Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    :root {
-      --primary-color: #7289DA;
-      --secondary-color: #ffd700;
-      --dark-blue: #0b1a3d;
-      --light-blue: #142a5c;
-      --text-color: #e0e0e0;
-      --bg-gradient: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
-      --card-bg: rgba(255, 255, 255, 0.05);
-      --border-color: rgba(255, 255, 255, 0.1);
-    }
+  <meta charset="UTF-8">
+  <title>Guardian Vouches – Terms of Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+  <!-- Open Graph / Discord Embed -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Guardian Vouches - Terms of Service">
+  <meta property="og:description" content="Read the Terms of Service for Guardian Vouches, a Discord bot for managing and displaying vouches in your community.">
+  <meta property="og:url" content="https://guardiandevlabs.github.io/guardianvouches/terms/">
+  <meta property="og:image" content="https://i.ibb.co/0jhJXqdX/GLabs-Script-New.png">
 
-    body {
-      min-height: 100vh;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 50px 20px;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .container {
-      background: rgba(0,0,0,0.85);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      max-width: 800px;
-      width: 100%;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--secondary-color);
-      text-align: center;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 50px 20px;
+    }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: var(--secondary-color);
-    }
+    .container {
+      background: rgba(0,0,0,0.85);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      max-width: 800px;
+      width: 100%;
+      line-height: 1.6;
+    }
 
-    p, li {
-      margin-bottom: 15px;
-      font-size: 1.05rem;
-    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+      text-align: center;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
 
-    ul {
-      margin-left: 20px;
-    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #ffea00;
+    }
 
-    a {
-      color: var(--secondary-color);
-      text-decoration: none;
-    }
+    p, li {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    ul {
+      margin-left: 20px;
+    }
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: var(--secondary-color);
-      color: var(--dark-blue);
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
 
-    .back-btn:hover {
-      background: #ffea00;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-    /* Footer Styles */
-    .footer {
-        text-align: center;
-        padding: 40px 20px;
-        background: rgba(0, 0, 0, 0.2);
-        margin-top: auto;
-        border-top: 1px solid var(--border-color);
-        width: 100%;
-    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background: #ffd700;
+      color: #1e3c72;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-    .footer p {
-        margin-bottom: 15px;
-        color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .footer-links a {
-        color: var(--primary-color);
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-    
-    .footer-links a:hover {
-        color: var(--secondary-color);
-    }
-
-    .social-icons {
-        margin-top: 20px;
-    }
-
-    .social-icons a {
-        color: #fff;
-        font-size: 1.5rem;
-        margin: 0 10px;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-        color: var(--secondary-color);
-        transform: scale(1.2);
-    }
-  </style>
+    .back-btn:hover {
+      background: #ffea00;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Terms of Service</h1>
+  <div class="container">
+    <h1>Terms of Service</h1>
 
-    <p><strong>Last Updated:</strong> September 22, 2025</p>
+    <p><strong>Last Updated:</strong> September 22, 2025</p>
 
-    <p>By using <strong>Guardian Vouches</strong>, you agree to the following Terms of Service:</p>
+    <p>By using <strong>Guardian Vouches</strong>, you agree to the following Terms of Service:</p>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By adding Guardian Vouches to your Discord server or interacting with it, you agree to these Terms of Service. If you do not agree, you must not use the Bot.</p>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By adding Guardian Vouches to your Discord server or interacting with it, you agree to these Terms of Service. If you do not agree, you must not use the Bot.</p>
 
-    <h2>2. Service Description</h2>
-    <p>Guardian Vouches is a Discord bot that allows users to create, manage, and display vouches (ratings/reviews) to enhance trust and credibility within communities.</p>
+    <h2>2. Service Description</h2>
+    <p>Guardian Vouches is a Discord bot that allows users to create, manage, and display vouches (ratings/reviews) to enhance trust and credibility within communities.</p>
 
-    <h2>3. Proper Use</h2>
-    <ul>
-      <li>Any illegal or harmful activity.</li>
-      <li>Harassment, hate speech, or abusive behavior.</li>
-      <li>Collecting or sharing personal information without consent.</li>
-      <li>Exploiting the bot in ways not intended by its design.</li>
-    </ul>
+    <h2>3. Proper Use</h2>
+    <ul>
+      <li>Any illegal or harmful activity.</li>
+      <li>Harassment, hate speech, or abusive behavior.</li>
+      <li>Collecting or sharing personal information without consent.</li>
+      <li>Exploiting the bot in ways not intended by its design.</li>
+    </ul>
 
-    <h2>4. Availability</h2>
-    <p>The Bot is provided "as-is." We do not guarantee 100% uptime, uninterrupted service, or that the Bot will be error-free.</p>
+    <h2>4. Availability</h2>
+    <p>The Bot is provided "as-is." We do not guarantee 100% uptime, uninterrupted service, or that the Bot will be error-free.</p>
 
-    <h2>5. Termination</h2>
-    <p>We reserve the right to restrict or remove access to Guardian Vouches at any time, for any reason, without prior notice.</p>
+    <h2>5. Termination</h2>
+    <p>We reserve the right to restrict or remove access to Guardian Vouches at any time, for any reason, without prior notice.</p>
 
-    <h2>6. Liability</h2>
-    <p>We are not responsible for any damages, losses, or disputes that arise from the use of Guardian Vouches. All use of the Bot is at your own risk.</p>
+    <h2>6. Liability</h2>
+    <p>We are not responsible for any damages, losses, or disputes that arise from the use of Guardian Vouches. All use of the Bot is at your own risk.</p>
 
-    <h2>7. Changes to the Terms</h2>
-    <p>We may update these Terms at any time. Continued use of Guardian Vouches after changes are posted means you agree to the revised Terms.</p>
+    <h2>7. Changes to the Terms</h2>
+    <p>We may update these Terms at any time. Continued use of Guardian Vouches after changes are posted means you agree to the revised Terms.</p>
 
-   <a class="back-btn" href="/guardianvouches/">← Back to Home</a>
-  </div>
-
-  <footer class="footer">
-      <p>Guardian Vouches &copy; 2025. All rights reserved.</p>
-      <div class="footer-links">
-          <a href="terms/">Terms of Service</a> |
-          <a href="privacy/">Privacy Policy</a>
-      </div>
-      <div class="social-icons">
-          <a href="https://discord.gg/guardianlabs" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-          <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      </div>
-  </footer>
+    <a class="back-btn" href="/guardianvouches/">← Back to Home</a>
+  </div>
 </body>
 </html>

@@ -22,11 +22,11 @@
         :root {
             --primary-color: #7289DA;
             --secondary-color: #ffd700;
-            --dark-blue: #1e3c72;
-            --light-blue: #2a5298;
+            --dark-blue: #1a2a53;
+            --light-blue: #2c457b;
             --text-color: #e0e0e0;
-            --bg-gradient: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
-            --card-bg: rgba(0, 0, 0, 0.75);
+            --bg-gradient: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+            --card-bg: rgba(255, 255, 255, 0.08);
         }
 
         /* General Styles */
@@ -41,12 +41,22 @@
             background: var(--bg-gradient);
             color: var(--text-color);
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
         }
 
         /* Header & Navigation */
@@ -62,6 +72,11 @@
             font-weight: 800;
             color: var(--secondary-color);
             text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links a {
@@ -69,17 +84,52 @@
             text-decoration: none;
             margin-left: 25px;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: var(--secondary-color);
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-links a:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
 
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px;
+            background-image: url('https://raw.githubusercontent.com/GuardianDevLabs/guardianvouches/main/assets/thumbnail.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 1;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 16px;
+            z-index: -1;
         }
 
         .hero h1 {
@@ -130,6 +180,7 @@
         .section {
             padding: 60px 20px;
             background: var(--card-bg);
+            backdrop-filter: blur(10px);
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             margin-bottom: 40px;
@@ -151,10 +202,24 @@
             text-align: center;
         }
         
+        .feature-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
         .feature-item i {
             font-size: 3rem;
             color: var(--secondary-color);
             margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         
         .feature-item h3 {
@@ -162,16 +227,23 @@
             margin-bottom: 10px;
             color: #fff;
         }
+        
+        .feature-item p {
+            color: var(--text-color);
+        }
 
         /* Footer */
         .footer {
             text-align: center;
             padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer p {
             margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .footer-links a {
@@ -184,6 +256,22 @@
         
         .footer-links a:hover {
             color: var(--secondary-color);
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -199,7 +287,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section class="hero">
             <h1>Build Trust & Reputation in Your Community</h1>
             <p>Guardian Vouches is the ultimate Discord bot to create, manage, and display a reliable reputation system for your members. Perfect for trading, services, and marketplaces.</p>
@@ -207,7 +295,7 @@
             <a href="https://discord.gg/guardianlabs" target="_blank" class="btn secondary">Join the Support Server</a>
         </section>
 
-        <section id="features" class="section container">
+        <section id="features" class="section">
             <h2 class="section-title">Why Choose Guardian Vouches?</h2>
             <div class="features-grid">
                 <div class="feature-item">
@@ -233,7 +321,7 @@
             </div>
         </section>
 
-        <section id="how-it-works" class="section container">
+        <section id="how-it-works" class="section">
             <h2 class="section-title">How It Works</h2>
             <div class="features-grid">
                 <div class="feature-item">
@@ -260,6 +348,11 @@
         <div class="footer-links">
             <a href="terms/">Terms of Service</a> |
             <a href="privacy/">Privacy Policy</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://discord.gg/guardianlabs" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
     </footer>
 

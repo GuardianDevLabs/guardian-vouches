@@ -2,7 +2,7 @@
 
 **Last Updated:** September 22, 2025  
 
-By using Guardian Vouches ("the Bot"), you agree to the following Terms of Service:  
+By using Guardian Vouches, you agree to the following Terms of Service:  
 
 ## 1. Acceptance of Terms  
 By adding Guardian Vouches to your Discord server or interacting with it, you agree to these Terms of Service. If you do not agree, you must not use the Bot.  

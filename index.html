@@ -113,7 +113,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 100px 20px;
+            padding: 160px 20px 100px;
             gap: 50px;
             flex-wrap: wrap;
         }
@@ -142,14 +142,24 @@
             flex: 1;
             min-width: 300px;
             text-align: right;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .hero-image img {
-            max-width: 120%; /* bigger than normal */
+            max-width: 120%;
             height: auto;
             border-radius: 16px;
             box-shadow: none;
-            transform: scale(1.2); /* increases size */
+            transform: scale(1.2);
+            animation: float 3s ease-in-out infinite;
+            margin-right: -15%;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0px) scale(1.2); }
+            50% { transform: translate(0, 15px) scale(1.2); }
+            100% { transform: translate(0, 0px) scale(1.2); }
         }
 
         .btn {
@@ -189,7 +199,7 @@
         }
         
         #features {
-            margin-top: 150px; /* Moves the entire section further down the page */
+            margin-top: 150px;
         }
         
         .section-title {
@@ -467,7 +477,7 @@
             <a href="https://discord.gg/guardianlabs" target="_blank" class="btn secondary">Join the Support Server</a>
         </div>
         <div class="hero-image">
-            <img src="https://i.ibb.co/wZgPt7X6/09e8d708c3e011a73adc40ada547ba9c.webp" alt="Guardian Vouches Discord Bot Interface">
+            <img src="https://i.ibb.co/dwBjtSwd/logo.png" alt="Guardian Vouches Discord Bot Interface">
         </div>
     </section>
 
@@ -523,7 +533,7 @@
     <div class="footer-content">
         <div class="footer-section">
             <div class="footer-brand">
-                <img src="https://i.ibb.co/wZgPt7X6/09e8d708c3e011a73adc40ada547ba9c.webp" alt="Guardian Vouches Logo">
+                <img src="https://i.ibb.co/dwBjtSwd/logo.png" alt="Guardian Vouches Logo">
                 <div class="brand-content">
                     <h3>Guardian Vouches</h3>
                     <div class="brand-tagline">The #1 Vouch Solution</div>
